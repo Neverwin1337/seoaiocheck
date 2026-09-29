@@ -23,13 +23,7 @@ async function parseTarget(input) {
   if (!['http:', 'https:'].includes(url.protocol) || !url.hostname || url.username || url.password) {
     throw new Error('只支援不含帳密的 HTTP 或 HTTPS 網址。');
   }
-  if (!allowedOrigin(url.origin)) {
-    throw new Error('無法檢測本機或內部網站。');
-  }
-  const addresses = await lookup(url.hostname, { all: true });
-  if (!addresses.length || addresses.some(({ address }) => !publicIp(address))) {
-    throw new Error('無法檢測本機或內部網站。');
-  }
+
   url.hash = '';
   return url.href;
 }
