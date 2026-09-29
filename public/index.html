@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="輸入網站網址，並排查看 SEOmator SEO 評分與 GEO Optimizer AI 檢索準備度評分。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23155a4e'/%3E%3Ctext x='9' y='45' fill='white' font-size='37'%3E//%3C/text%3E%3C/svg%3E">
+  <title>雙軌網站檢測｜SEO × GEO</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="topbar"><div class="wrap topbar-inner"><span class="brand"><span class="brand-mark" aria-hidden="true">//</span> 雙軌檢測</span><span class="top-note">SEO × GEO / 網站健檢</span></div></header>
+  <main id="main" class="wrap">
+    <section class="intro" aria-labelledby="title">
+      <div class="intro-copy"><p class="section-code">01 / 網址分析</p><h1 id="title">一個網址，<br>看清兩種能見度。</h1><p class="lead">整合 SEOmator 的搜尋引擎檢測與 GEO Optimizer 的 AI 檢索準備度，一次取得兩份分數與可行動的報告。</p></div>
+      <div class="intro-figure" aria-hidden="true"><div class="figure-index">雙重視角<br><span>ONE URL · TWO SIGNALS</span></div><div class="figure-lines"><span>SEARCH</span><i></i><span>AI</span></div><div class="figure-bottom">01 — 02</div></div>
+    </section>
+    <form id="audit-form" class="audit-form">
+      <label for="site-url">要檢測的網站網址</label>
+      <div class="form-row"><input id="site-url" type="url" inputmode="url" autocomplete="url" required placeholder="https://example.com" aria-describedby="form-help form-error"><button id="submit" type="submit"><span id="submit-text">開始檢測</span><span class="arrow" aria-hidden="true">↗</span></button></div>
+      <div class="form-meta"><p id="form-help">請輸入公開網站的完整網址，檢測通常需要幾秒至一分鐘。</p><p id="form-error" role="alert"></p></div>
+    </form>
+    <section class="report" aria-labelledby="report-title"><div class="section-heading"><div><p class="section-code">02 / 整合報告</p><h2 id="report-title">檢測結果</h2></div><p id="checked-at" class="timestamp">等待輸入網址</p></div><p id="audit-status" class="sr-only" role="status" aria-live="polite"></p>
+      <div id="report-intro" class="empty-report"><span class="empty-symbol" aria-hidden="true">↗</span><p>輸入網址後，這裡會顯示兩個引擎的分數與建議。</p></div>
+      <div id="report-content" hidden><div class="report-toolbar"><p id="target-url" class="target-url"></p><div id="export-actions" class="export-actions" hidden><button type="button" data-export="html" aria-label="下載 HTML 報告">下載 HTML</button><button type="button" data-export="json" aria-label="下載 JSON 報告">下載 JSON</button></div></div><div class="scores"><article class="score-panel seo-panel"><div class="score-top"><span class="source-name">01 / SEOmator</span><span class="source-type">搜尋引擎最佳化</span></div><div class="score-main"><strong id="seo-score">—</strong><span>/ 100</span></div><div class="rail"><span id="seo-rail"></span></div><p id="seo-caption">檢查技術 SEO、內容、連結與可存取性。</p></article><article class="score-panel geo-panel"><div class="score-top"><span class="source-name">02 / GEO Optimizer</span><span class="source-type">AI 檢索準備度</span></div><div class="score-main"><strong id="geo-score">—</strong><span>/ 100</span></div><div class="rail"><span id="geo-rail"></span></div><p id="geo-caption">評估 AI 爬蟲存取、結構化資料與內容可引用性；不是實際引用率。</p></article></div>
+      <div class="details"><section><h3>分類分數</h3><div class="category-columns"><div><h4>SEOmator</h4><div id="seo-categories"></div></div><div><h4>GEO Optimizer</h4><div id="geo-categories"></div></div></div></section><section class="findings"><div class="findings-heading"><h3>優先檢查項目</h3><span id="finding-count"></span></div><p class="severity-note">SEO：未通過／注意是 SEOmator 的檢測狀態，非風險評級。GEO：高／中／低依對應分類的失分比例估算；未能對應者標為未分級。</p><div id="finding-list"></div></section></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>雙軌網站檢測</span><span>SEOmator + GEO Optimizer 的原始評分，未重新加權。</span></div></footer>
+</body>
+</html>
